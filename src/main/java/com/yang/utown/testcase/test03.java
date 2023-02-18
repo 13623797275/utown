@@ -48,6 +48,7 @@ public class test03 {
 		System.out.println("哈哈哈哈");
 		System.out.println("master github");
 		System.out.println("push test");
+		System.out.println("pull test");
 	}
 
 }
