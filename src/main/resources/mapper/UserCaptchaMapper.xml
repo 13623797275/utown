@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yang.utown.mapper.UserCaptchaMapper">
+
+    <resultMap id="BaseResultMap" type="com.yang.utown.pojo.UserCaptcha">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="identifier" column="identifier" jdbcType="VARCHAR"/>
+        <result property="captcha" column="captcha" jdbcType="VARCHAR"/>
+        <result property="captchaType" column="captcha_type" jdbcType="TINYINT"/>
+        <result property="status" column="status" jdbcType="TINYINT"/>
+        <result property="shareCode" column="share_code" jdbcType="VARCHAR"/>
+        <result property="shareSource" column="share_source" jdbcType="TINYINT"/>
+        <result property="expireTime" column="expire_time" jdbcType="TIMESTAMP"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,identifier,captcha,
+        captcha_type,status,share_code,
+        share_source,expire_time,create_time,
+        update_time
+    </sql>
+    <select id="selectCaptcha1" resultMap="BaseResultMap">
+    select captcha
+    from user_captcha
+    where
+    identifier = #{identifier,jdbcType=VARCHAR}
+    order by ABS(NOW()-create_time) ASC
+    limit 0,1;
+    </select>
+    <select id="selectCaptcha" resultMap="BaseResultMap">
+    select captcha
+    from user_captcha
+    where
+    identifier = #{identifier,jdbcType=VARCHAR}
+    order by id desc
+    limit 0,1;
+    </select>
+</mapper>

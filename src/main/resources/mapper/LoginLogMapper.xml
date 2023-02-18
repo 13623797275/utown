@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yang.utown.mapper.LoginLogMapper">
+
+    <resultMap id="BaseResultMap" type="com.yang.utown.pojo.LoginLog">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="guid" column="guid" jdbcType="CHAR"/>
+            <result property="identityType" column="identity_type" jdbcType="TINYINT"/>
+            <result property="identifier" column="identifier" jdbcType="VARCHAR"/>
+            <result property="lang" column="lang" jdbcType="VARCHAR"/>
+            <result property="version" column="version" jdbcType="VARCHAR"/>
+            <result property="deviceId" column="device_id" jdbcType="VARCHAR"/>
+            <result property="deviceVersion" column="device_version" jdbcType="VARCHAR"/>
+            <result property="deviceType" column="device_type" jdbcType="TINYINT"/>
+            <result property="clientType" column="client_type" jdbcType="TINYINT"/>
+            <result property="loginIp" column="login_ip" jdbcType="BIGINT"/>
+            <result property="loginTime" column="login_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,guid,identity_type,
+        identifier,lang,version,
+        device_id,device_version,device_type,
+        client_type,login_ip,login_time
+    </sql>
+</mapper>
