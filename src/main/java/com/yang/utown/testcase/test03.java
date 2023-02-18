@@ -46,7 +46,7 @@ public class test03 {
 		String result = driver.findElement(By.xpath("//*[@resource-id='io.jagat.main:id/login_input_password_edit']/android.widget.RelativeLayout/android.widget.EditText")).getText();
 		System.out.println(result);
 		System.out.println("哈哈哈哈");
-		System.out.println("hello github");
+		System.out.println("master github");
 	}
 
 }
