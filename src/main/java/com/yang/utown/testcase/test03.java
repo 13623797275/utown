@@ -45,6 +45,7 @@ public class test03 {
 		driver.findElement(By.id("io.jagat.main:id/login_password_next_tv")).click();
 		String result = driver.findElement(By.xpath("//*[@resource-id='io.jagat.main:id/login_input_password_edit']/android.widget.RelativeLayout/android.widget.EditText")).getText();
 		System.out.println(result);
+		System.out.println("哈哈哈哈");
 	}
 
 }
